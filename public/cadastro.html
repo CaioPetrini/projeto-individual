@@ -19,7 +19,7 @@
   <!--header inicio-->
   <div class="header">
     <div class="container">
-      <div class="titulo"><img src="../public/assets/imgs/titulo hollow guide.png" width="300" height="150"></div>
+      <div class="titulo"><img onclick="logo_landing_page()" src="../public/assets/imgs/titulo hollow guide.png" width="300" height="150"></div>
     </div>
   </div>
   <!--header fim-->
@@ -60,6 +60,7 @@
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
           </div>
+          <div class="check">Já possui uma conta? <a href="login.html">Entrar</a></div>
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
         </div>
 
@@ -159,5 +160,9 @@
 
   function sumirMensagem() {
     cardErro.style.display = "none";
+  }
+
+  function logo_landing_page() {
+    window.location.href = 'index.html'
   }
 </script>

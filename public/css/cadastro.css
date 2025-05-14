@@ -20,6 +20,10 @@ body {
   src: url(../font/Poppins/Poppins-Regular.ttf);
 }
 
+img:hover {
+  cursor: pointer;
+}
+
 .header {
   display: flex;
   height: 140px;
@@ -59,6 +63,15 @@ input {
 .senhas input {
   display: flex;
   height: 30px;
+}
+
+.check {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .botao {
