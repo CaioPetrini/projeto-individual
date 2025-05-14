@@ -35,6 +35,10 @@ body {
   margin-left: 25px;
 }
 
+.git_logo:hover {
+  cursor: pointer;
+}
+
 .banner {
   height: 100%;
   width: 100%;
@@ -55,6 +59,10 @@ body {
   margin-top: -585px;
   margin-right: 20px;
   font-size: 30px;
+}
+
+.botao :hover {
+  cursor: pointer;  
 }
 
 button {
@@ -106,6 +114,7 @@ button {
   margin-top: 150px;
   margin-left: 250px;
   margin-right: 250px;
+  margin-bottom: 100px;
 }
 
 .container5 {
@@ -114,13 +123,57 @@ button {
 }
 
 .container5 .paragrafo {
-    margin-left: 50px;
+  margin-left: 50px;
+}
+
+.footer {
+  background-color: #000717;
+  height: 150px;
+  color: #fff;
+  display: flex;
+  border-top: 1px solid #909090;
+  font-family: 'poppins';
+  flex-direction: column;
+}
+
+.container6 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+}
+
+.footer .contato {
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 250px;
+}
+
+.footer .email {
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.footer .telefone {
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  margin-right: 250px;
+}
+
+.footer .mensagem {
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 50px;
 }
 
 
-
 /* .banner {
-  height: var(--tamanho-banner);
+   height: var(--tamanho-banner);
   color: white;
   background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
   background-size: cover;
@@ -233,24 +286,6 @@ button {
   align-items: center;
 }
 
-/* FOOTER 
-
-.footer {
-  background-color: #32b9cd;
-  height: 150px;
-  color: #fff;
-  display: flex;
-  font-size: 15px;
-}
-
-.footer .container {
-  justify-content: center;
-  text-align: center;
-}
-
-.footer .container .version {
-  font-size: 12px;
-}
 
 /* LOGIN 
 

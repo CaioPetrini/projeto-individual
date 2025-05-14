@@ -10,7 +10,8 @@
 
   <script src="./js/sessao.js"></script>
 
-  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="icon" href="./assets/icon/icon.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
@@ -18,8 +19,9 @@
   <div class="container1">
     <div class="banner">
       <div class="titulo"><img src="../public/assets/imgs/titulo hollow guide.png" width="800" height="350"></div>
-      <div class="botao"><button>Cadastrar-se</button>|<button>Entrar</button></div>
-      <div class="git_logo"></div>
+      <div class="botao"><button onclick="cadastrar()">Cadastrar-se</button>|<button onclick="entrar()">Entrar</button>
+      </div>
+      <div onclick="github()" class="git_logo"></div>
     </div>
   </div>
   <div class="container2">
@@ -50,6 +52,28 @@
       </div>
     </div>
   </div>
+  <div class="footer">
+    <div class="container6">
+      <div class="contato">E-mail e Telefone para contato:</div>
+      <div class="email">E-mail: caio.asouza@sptech.school</div>
+      <div class="telefone">Telefone: (11) 95302-7209</div>
+    </div>
+    <div class="mensagem">Feito por aluno SPTech © 2025</div>
+  </div>
 </body>
 
 </html>
+
+<script>
+  function cadastrar() {
+    window.location.href = 'cadastro.html';
+  }
+
+  function entrar() {
+    window.location.href = 'login.html';
+  }
+
+  function github() {
+    window.open('https://github.com/CaioPetrini/projeto-individual', '_blank');
+  }
+</script>
