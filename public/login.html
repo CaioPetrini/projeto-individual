@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Login</title>
+    <title>Hollow Guide | Login</title>
 
     <script src="./js/sessao.js"></script>
 
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="icon" href="./assets/icon/icon.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
@@ -21,22 +21,7 @@
 
     <div class="header">
         <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="index.html">Inicial</a>
-                </li>
-                <li>
-                    <a href="simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li class="agora">
-                    <a href="#">Login</a>
-                </li>
-                <li>
-                    <a href="cadastro.html">Cadastro</a>
-                </li>
-            </ul>
+            <div class="titulo"><img onclick="logo_landing_page()" src="../public/assets/imgs/titulo hollow guide.png" width="300" height="150"></div>
         </div>
     </div>
 
@@ -49,7 +34,7 @@
         </div>
         <div class="container">
             <div class="card card-login">
-                <h2>Olá de volta!</h2>
+                <h2>Bem-vindo(a) de volta!</h2>
                 <div class="formulario">
                     <div class="campo">
                         <span>E-mail:</span>
@@ -59,11 +44,8 @@
                         <span>Senha:</span>
                         <input id="senha_input" type="password" placeholder="******">
                     </div>
+                    <div class="check">Não possui uma conta ainda? <a href="./cadastro.html">Cadastre-se</a></div>
                     <button class="botao" onclick="entrar()">Entrar</button>
-                </div>
-
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
                 </div>
 
                 <div id="div_erros_login"></div>
@@ -73,11 +55,13 @@
 
     <!--footer inicio-->
     <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
-        </div>
+    <div class="container6">
+      <div class="contato">E-mail e Telefone para contato:</div>
+      <div class="email">E-mail: caio.asouza@sptech.school</div>
+      <div class="telefone">Telefone: (11) 95302-7209</div>
     </div>
+    <div class="mensagem">Feito por aluno SPTech © 2025</div>
+  </div>
     <!--footer fim-->
 
 </body>
@@ -156,4 +140,7 @@
         cardErro.style.display = "none"
     }
 
+    function logo_landing_page() {
+    window.location.href = 'index.html'
+  }
 </script>
