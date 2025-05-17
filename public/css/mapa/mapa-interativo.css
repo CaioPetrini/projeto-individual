@@ -20,7 +20,7 @@ body {
   src: url(../../font/Poppins/Poppins-Regular.ttf);
 }
 
-img:hover {
+.titulo img:hover {
   cursor: pointer;
 }
 
@@ -33,7 +33,7 @@ img:hover {
 
 .container {
   display: flex;
-  height: 1661px;
+  height: 661px;
   justify-content: center;
   font-family: 'poppins';
   font-size: 25px;
@@ -50,86 +50,7 @@ img:hover {
     display: flex;
     justify-content: center;
     margin-top: 30px;
-}
-
-.dirtmouth {
-    display: flex;
-    margin-left: 165px;
-    margin-top: -85px;
-}
-
-.pico_de_cristal {
-    display: flex;
-    margin-left: 375px;
-    margin-top: -150px;
-}
-
-.caminho_verde {
-    display: flex;
-    margin-left: -110px;
-    margin-top: -75px;
-}
-
-.encruzilhada_esquecida {
-    display: flex;
-    margin-left: 220px;
-    margin-top: -95px;
-}
-
-.terra_do_descanso {
-    display: flex;
-    justify-content: center;
-    margin-left: 170px;
-    margin-top: -90px;
-}
-
-.jardins_da_rainha {
-    display: flex;
-    margin-left: -125px;
-}
-
-.canion_da_nevoa {
-    display: flex;
-    margin-top: -165px;
-    margin-left: 40px;
-}
-
-.ermos_fungicos {
-    display: flex;
-    margin-top: -110px;
-    margin-left: 140px;
-}
-
-.cidade_das_lagrimas {
-    display: flex;
-    justify-content: center;
-    margin-top: -230px;
-    margin-left: 45px;
-}
-
-.borda_do_reino {
-    display: flex;
-    justify-content: end;
-    margin-right: 110px;
-    margin-top: -155px;
-}
-
-.ninho_profundo {
-    display: flex;
-    margin-top: -170px;
-    margin-left: -110px;
-}
-
-.hidrovia_real {
-    display: flex;
-    justify-content: center;
-    margin-top: -150px;
-}
-
-.colmeia {
-    display: flex;
-    justify-content: end;
-    
+    margin-bottom: 30px;
 }
 
 .footer {

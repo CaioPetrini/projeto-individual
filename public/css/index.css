@@ -105,6 +105,8 @@ button {
 .img_paragrafo {
   border: 2px solid white;
   border-radius: 10%;
+  height: 400px;
+  width: 1000px;
 }
 
 .container4 {
