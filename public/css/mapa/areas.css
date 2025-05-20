@@ -24,12 +24,18 @@ body {
   cursor: pointer;
 }
 
+.titulo {
+    display: flex;
+    margin-right: 10px;
+}
+
 .header {
   display: flex;
   height: 140px;
   width: 100%;
   border-bottom: 1px solid #909090;
   justify-content: space-between;
+  flex-direction: row-reverse;
 }
 
 .container {
@@ -47,16 +53,13 @@ body {
     flex-direction: column;
 }
 
-.link_quiz {
+.link_voltar {
   display: flex;
   align-items: center;
   margin-right: 20px;
   font-family: 'trajan';
   font-size: 30px;
-}
-
-area:hover {
-    cursor: pointer;
+  margin-left: 30px;
 }
 
 a {
