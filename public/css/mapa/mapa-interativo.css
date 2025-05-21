@@ -47,6 +47,25 @@ body {
     flex-direction: column;
 }
 
+.hello {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: -200px;
+  align-self: center;
+}
+
+.hello h3 {
+  color: white;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.hello h3 span {
+  font-weight: 800;
+  text-decoration: underline;
+}
+
 .link_quiz {
   display: flex;
   align-items: center;

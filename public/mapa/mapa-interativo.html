@@ -8,20 +8,23 @@
 
   <title>HollowGuide | Mapa Interativo</title>
 
-  <script src="./js/sessao.js"></script>
+  <script src="../js/sessao.js"></script>
 
   <link rel="stylesheet" href="../css/mapa/mapa-interativo.css" />
   <link rel="icon" href="./../assets/icon/icon.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
+<body">
   <!--header inicio-->
   <div class="header">
     <div class="container2">
       <div class="titulo"><img onclick="logo_landing_page()" src="../assets/imgs/titulo hollow guide.png" width="300"
           height="150"></div>
     </div>
+    <div class="hello" style="width: 150px;">
+                <h3>Olá, <span id="nome_input">usuário</span>!</h3>
+            </div>
     <div class="link_quiz"><a href="../quiz/quiz.html">Quiz</a></div>
   </div>
   <!--header fim-->
@@ -32,62 +35,62 @@
       <img src="../assets/imgs/mapa hallownest geral vFinal.png" usemap="#image-map" width="845" height="550">
 
 <map name="image-map">
-    <area onclick="penhascos_uivantes()" target="_blank" alt="penhascos uivantes" title="penhascos uivantes" coords="119,17,281,81" shape="rect">
-    <area onclick="penhascos_uivantes()" target="_blank" alt="penhascos uivantes" title="penhascos uivantes" coords="248,131,203,77" shape="rect">
-    <area onclick="penhascos_uivantes()" target="_blank" alt="penhascos uivantes" title="penhascos uivantes" coords="128,78,205,107" shape="rect">
-    <area onclick="dirtmouth()" target="_blank" alt="dirtmouth" title="dirtmouth" coords="255,86,433,132" shape="rect">
-    <area onclick="dirtmouth()" target="_blank" alt="dirtmouth" title="dirtmouth" coords="297,66,431,89" shape="rect">
-    <area onclick="pico_de_cristal()" target="_blank" alt="pico de cristal" title="pico de cristal" coords="568,5,605,130" shape="rect">
-    <area onclick="pico_de_cristal()" target="_blank" alt="pico de cristal" title="pico de cristal" coords="505,34,572,176" shape="rect">
-    <area onclick="pico_de_cristal()" target="_blank" alt="pico de cristal" title="pico de cristal" coords="436,78,506,103" shape="rect">
-    <area onclick="pico_de_cristal()" target="_blank" alt="pico de cristal" title="pico de cristal" coords="603,82,641,131" shape="rect">
-    <area onclick="pico_de_cristal()" target="_blank" alt="pico de cristal" title="pico de cristal" coords="571,149,610,176" shape="rect">
-    <area onclick="caminho_verde()" target="_blank" alt="caminho verde" title="caminho verde" coords="196,113,33,163" shape="rect">
-    <area onclick="caminho_verde()" target="_blank" alt="caminho verde" title="caminho verde" coords="296,209,130,138" shape="rect">
-    <area onclick="encruzilhada_esquecida()" target="_blank" alt="encruzilhada esquecida" title="encruzilhada esquecida" coords="304,136,500,199" shape="rect">
-    <area onclick="encruzilhada_esquecida()" target="_blank" alt="encruzilhada esquecida" title="encruzilhada esquecida" coords="498,195,442,215" shape="rect">
-    <area onclick="terra_do_descanso()" target="_blank" alt="terra do descanso" title="terra do descanso" coords="641,134,727,210" shape="rect">
-    <area onclick="terra_do_descanso()" target="_blank" alt="terra do descanso" title="terra do descanso" coords="507,180,643,209" shape="rect">
-    <area onclick="terra_do_descanso()" target="_blank" alt="terra do descanso" title="terra do descanso" coords="507,218,615,207" shape="rect">
-    <area onclick="jardins_da_rainha()" target="_blank" alt="jardins da rainha" title="jardins da rainha" coords="48,219,157,325" shape="rect">
-    <area onclick="jardins_da_rainha()" target="_blank" alt="jardins da rainha" title="jardins da rainha" coords="215,253,154,324" shape="rect">
-    <area onclick="jardins_da_rainha()" target="_blank" alt="jardins da rainha" title="jardins da rainha" coords="35,252,49,318" shape="rect">
-    <area onclick="canion_da_nevoa()" target="_blank" alt="canion da nevoa" title="canion da nevoa" coords="165,216,332,250" shape="rect">
-    <area onclick="canion_da_nevoa()" target="_blank" alt="canion da nevoa" title="canion da nevoa" coords="300,202,331,220" shape="rect">
-    <area onclick="canion_da_nevoa()" target="_blank" alt="canion da nevoa" title="canion da nevoa" coords="224,247,271,291" shape="rect">
-    <area onclick="ermos_fungicos()" target="_blank" alt="ermos fungicos" title="ermos fungicos" coords="336,206,373,362" shape="rect">
-    <area onclick="ermos_fungicos()" target="_blank" alt="ermos fungicos" title="ermos fungicos" coords="392,229,371,364" shape="rect">
-    <area onclick="ermos_fungicos()" target="_blank" alt="ermos fungicos" title="ermos fungicos" coords="222,295,338,325" shape="rect">
-    <area onclick="ermos_fungicos()" target="_blank" alt="ermos fungicos" title="ermos fungicos" coords="276,264,338,298" shape="rect">
-    <area onclick="ermos_fungicos()" target="_blank" alt="ermos fungicos" title="ermos fungicos" coords="314,393,369,323" shape="rect">
-    <area onclick="cidade_das_lagrimas()" target="_blank" alt="cidade das lagrimas" title="cidade das lagrimas" coords="399,206,435,349" shape="rect">
-    <area onclick="cidade_das_lagrimas()" target="_blank" alt="cidade das lagrimas" title="cidade das lagrimas" coords="621,215,644,346" shape="rect">
-    <area onclick="cidade_das_lagrimas()" target="_blank" alt="cidade das lagrimas" title="cidade das lagrimas" coords="694,298,641,346" shape="rect">
-    <area onclick="cidade_das_lagrimas()" target="_blank" alt="cidade das lagrimas" title="cidade das lagrimas" coords="432,231,569,350" shape="rect">
-    <area onclick="cidade_das_lagrimas()" target="_blank" alt="cidade das lagrimas" title="cidade das lagrimas" coords="572,284,48" shape="circle">
-    <area onclick="cidade_das_lagrimas()" target="_blank" alt="cidade das lagrimas" title="cidade das lagrimas" coords="565,350,623,267" shape="rect">
-    <area onclick="borda_do_reino()" target="_blank" alt="borda do reino" title="borda do reino" coords="738,226,698,401" shape="rect">
-    <area onclick="borda_do_reino()" target="_blank" alt="borda do reino" title="borda do reino" coords="839,317,735,399" shape="rect">
-    <area onclick="borda_do_reino()" target="_blank" alt="borda do reino" title="borda do reino" coords="655,381,700,399" shape="rect">
-    <area onclick="borda_do_reino()" target="_blank" alt="borda do reino" title="borda do reino" coords="655,474,684,397" shape="rect">
-    <area onclick="borda_do_reino()" target="_blank" alt="borda do reino" title="borda do reino" coords="597,451,658,474" shape="rect">
-    <area onclick="borda_do_reino()" target="_blank" alt="borda do reino" title="borda do reino" coords="658,278,699,226" shape="rect">
-    <area onclick="ninho_profundo()" target="_blank" alt="ninho profundo" title="ninho profundo" coords="4,476,47,371" shape="rect">
-    <area onclick="ninho_profundo()" target="_blank" alt="ninho profundo" title="ninho profundo" coords="81,371,45,449" shape="rect">
-    <area onclick="ninho_profundo()" target="_blank" alt="ninho profundo" title="ninho profundo" coords="101,329,268,450" shape="rect">
-    <area onclick="ninho_profundo()" target="_blank" alt="ninho profundo" title="ninho profundo" coords="294,337,266,393" shape="rect">
-    <area onclick="ninho_profundo()" target="_blank" alt="ninho profundo" title="ninho profundo" coords="310,368,292,393" shape="rect">
-    <area onclick="ninho_profundo()" target="_blank" alt="ninho profundo" title="ninho profundo" coords="79,404,103,449" shape="rect">
-    <area onclick="ninho_profundo()" target="_blank" alt="ninho profundo" title="ninho profundo" coords="331,478,141,447" shape="rect">
-    <area onclick="hidrovia_real()" target="_blank" alt="hidrovia real" title="hidrovia real" coords="674,352,397,380" shape="rect">
-    <area onclick="hidrovia_real()" target="_blank" alt="hidrovia real" title="hidrovia real" coords="373,363,652,407" shape="rect">
-    <area onclick="hidrovia_real()" target="_blank" alt="hidrovia real" title="hidrovia real" coords="651,423,468,403" shape="rect">
-    <area onclick="hidrovia_real()" target="_blank" alt="hidrovia real" title="hidrovia real" coords="469,449,552,420" shape="rect">
-    <area onclick="colmeia()" target="_blank" alt="a colmeia" title="a colmeia"  coords="690,403,832,492" shape="rect">
-    <area onclick="bacia_antiga()" target="_blank" alt="bacia antiga" title="bacia antiga" coords="551,452,470,484" shape="rect">
-    <area onclick="bacia_antiga()" target="_blank" alt="bacia antiga" title="bacia antiga" coords="427,484,628,548" shape="rect">
-    <area onclick="bacia_antiga()" target="_blank" alt="bacia antiga" title="bacia antiga" coords="404,538,552,479" shape="rect">
-    <area onclick="bacia_antiga()" target="_blank" alt="bacia antiga" title="bacia antiga" coords="326,486,406,538" shape="rect">
+    <area target="_self" alt="penhascos uivantes" title="penhascos uivantes" href="../mapa/áreas/penhascos_uivantes.html" coords="119,17,281,81" shape="rect">
+    <area target="_self" alt="penhascos uivantes" title="penhascos uivantes" href="../mapa/áreas/penhascos_uivantes.html" coords="248,131,203,77" shape="rect">
+    <area target="_self" alt="penhascos uivantes" title="penhascos uivantes" href="../mapa/áreas/penhascos_uivantes.html" coords="128,78,205,107" shape="rect">
+    <area target="_self" alt="dirtmouth" title="dirtmouth" href="../mapa/áreas/dirtmouth.html" coords="255,86,433,132" shape="rect">
+    <area target="_self" alt="dirtmouth" title="dirtmouth" href="../mapa/áreas/dirtmouth.html" coords="297,66,431,89" shape="rect">
+    <area target="_self" alt="pico de cristal" title="pico de cristal" href="../mapa/áreas/pico_de_cristal.html" coords="568,5,605,130" shape="rect">
+    <area target="_self" alt="pico de cristal" title="pico de cristal" href="../mapa/áreas/pico_de_cristal.html" coords="505,34,572,176" shape="rect">
+    <area target="_self" alt="pico de cristal" title="pico de cristal" href="../mapa/áreas/pico_de_cristal.html" coords="436,78,506,103" shape="rect">
+    <area target="_self" alt="pico de cristal" title="pico de cristal" href="../mapa/áreas/pico_de_cristal.html" coords="603,82,641,131" shape="rect">
+    <area target="_self" alt="pico de cristal" title="pico de cristal" href="../mapa/áreas/pico_de_cristal.html" coords="571,149,610,176" shape="rect">
+    <area target="_self" alt="caminho verde" title="caminho verde" href="../mapa/áreas/caminho_verde.html" coords="196,113,33,163" shape="rect">
+    <area target="_self" alt="caminho verde" title="caminho verde" href="../mapa/áreas/caminho_verde.html" coords="296,209,130,138" shape="rect">
+    <area target="_self" alt="encruzilhada esquecida" title="encruzilhada esquecida" href="../mapa/áreas/encruzilhada_esquecida.html" coords="304,136,500,199" shape="rect">
+    <area target="_self" alt="encruzilhada esquecida" title="encruzilhada esquecida" href="../mapa/áreas/encruzilhada_esquecida.html" coords="498,195,442,215" shape="rect">
+    <area target="_self" alt="terra do descanso" title="terra do descanso" href="../mapa/áreas/terra_do_descanso.html" coords="641,134,727,210" shape="rect">
+    <area target="_self" alt="terra do descanso" title="terra do descanso" href="../mapa/áreas/terra_do_descanso.html" coords="507,180,643,209" shape="rect">
+    <area target="_self" alt="terra do descanso" title="terra do descanso" href="../mapa/áreas/terra_do_descanso.html" coords="507,218,615,207" shape="rect">
+    <area target="_self" alt="jardins da rainha" title="jardins da rainha" href="../mapa/áreas/jardins_da_rainha.html" coords="48,219,157,325" shape="rect">
+    <area target="_self" alt="jardins da rainha" title="jardins da rainha" href="../mapa/áreas/jardins_da_rainha.html" coords="215,253,154,324" shape="rect">
+    <area target="_self" alt="jardins da rainha" title="jardins da rainha" href="../mapa/áreas/jardins_da_rainha.html" coords="35,252,49,318" shape="rect">
+    <area target="_self" alt="canion da nevoa" title="canion da nevoa" href="../mapa/áreas/canion_da_nevoa.html" coords="165,216,332,250" shape="rect">
+    <area target="_self" alt="canion da nevoa" title="canion da nevoa" href="../mapa/áreas/canion_da_nevoa.html" coords="300,202,331,220" shape="rect">
+    <area target="_self" alt="canion da nevoa" title="canion da nevoa" href="../mapa/áreas/canion_da_nevoa.html" coords="224,247,271,291" shape="rect">
+    <area target="_self" alt="ermos fungicos" title="ermos fungicos" href="../mapa/áreas/ermos_fungicos.html" coords="336,206,373,362" shape="rect">
+    <area target="_self" alt="ermos fungicos" title="ermos fungicos" href="../mapa/áreas/ermos_fungicos.html" coords="392,229,371,364" shape="rect">
+    <area target="_self" alt="ermos fungicos" title="ermos fungicos" href="../mapa/áreas/ermos_fungicos.html" coords="222,295,338,325" shape="rect">
+    <area target="_self" alt="ermos fungicos" title="ermos fungicos" href="../mapa/áreas/ermos_fungicos.html" coords="276,264,338,298" shape="rect">
+    <area target="_self" alt="ermos fungicos" title="ermos fungicos" href="../mapa/áreas/ermos_fungicos.html" coords="314,393,369,323" shape="rect">
+    <area target="_self" alt="cidade das lagrimas" title="cidade das lagrimas" href="../mapa/áreas/cidade_das_lagrimas.html" coords="399,206,435,349" shape="rect">
+    <area target="_self" alt="cidade das lagrimas" title="cidade das lagrimas" href="../mapa/áreas/cidade_das_lagrimas.html" coords="621,215,644,346" shape="rect">
+    <area target="_self" alt="cidade das lagrimas" title="cidade das lagrimas" href="../mapa/áreas/cidade_das_lagrimas.html" coords="694,298,641,346" shape="rect">
+    <area target="_self" alt="cidade das lagrimas" title="cidade das lagrimas" href="../mapa/áreas/cidade_das_lagrimas.html" coords="432,231,569,350" shape="rect">
+    <area target="_self" alt="cidade das lagrimas" title="cidade das lagrimas" href="../mapa/áreas/cidade_das_lagrimas.html" coords="572,284,48" shape="circle">
+    <area target="_self" alt="cidade das lagrimas" title="cidade das lagrimas" href="../mapa/áreas/cidade_das_lagrimas.html" coords="565,350,623,267" shape="rect">
+    <area target="_self" alt="borda do reino" title="borda do reino" href="../mapa/áreas/borda_do_reino.html" coords="738,226,698,401" shape="rect">
+    <area target="_self" alt="borda do reino" title="borda do reino" href="../mapa/áreas/borda_do_reino.html" coords="839,317,735,399" shape="rect">
+    <area target="_self" alt="borda do reino" title="borda do reino" href="../mapa/áreas/borda_do_reino.html" coords="655,381,700,399" shape="rect">
+    <area target="_self" alt="borda do reino" title="borda do reino" href="../mapa/áreas/borda_do_reino.html" coords="655,474,684,397" shape="rect">
+    <area target="_self" alt="borda do reino" title="borda do reino" href="../mapa/áreas/borda_do_reino.html" coords="597,451,658,474" shape="rect">
+    <area target="_self" alt="borda do reino" title="borda do reino" href="../mapa/áreas/borda_do_reino.html" coords="658,278,699,226" shape="rect">
+    <area target="_self" alt="ninho profundo" title="ninho profundo" href="../mapa/áreas/ninho_profundo.html" coords="4,476,47,371" shape="rect">
+    <area target="_self" alt="ninho profundo" title="ninho profundo" href="../mapa/áreas/ninho_profundo.html" coords="81,371,45,449" shape="rect">
+    <area target="_self" alt="ninho profundo" title="ninho profundo" href="../mapa/áreas/ninho_profundo.html" coords="101,329,268,450" shape="rect">
+    <area target="_self" alt="ninho profundo" title="ninho profundo" href="../mapa/áreas/ninho_profundo.html" coords="294,337,266,393" shape="rect">
+    <area target="_self" alt="ninho profundo" title="ninho profundo" href="../mapa/áreas/ninho_profundo.html" coords="310,368,292,393" shape="rect">
+    <area target="_self" alt="ninho profundo" title="ninho profundo" href="../mapa/áreas/ninho_profundo.html" coords="79,404,103,449" shape="rect">
+    <area target="_self" alt="ninho profundo" title="ninho profundo" href="../mapa/áreas/ninho_profundo.html" coords="331,478,141,447" shape="rect">
+    <area target="_self" alt="hidrovia real" title="hidrovia real" href="../mapa/áreas/hidrovia_real.html" coords="674,352,397,380" shape="rect">
+    <area target="_self" alt="hidrovia real" title="hidrovia real" href="../mapa/áreas/hidrovia_real.html" coords="373,363,652,407" shape="rect">
+    <area target="_self" alt="hidrovia real" title="hidrovia real" href="../mapa/áreas/hidrovia_real.html" coords="651,423,468,403" shape="rect">
+    <area target="_self" alt="hidrovia real" title="hidrovia real" href="../mapa/áreas/hidrovia_real.html" coords="469,449,552,420" shape="rect">
+    <area target="_self" alt="a colmeia" title="a colmeia" href="../mapa/áreas/a_colmeia.html" coords="690,403,832,492" shape="rect">
+    <area target="_self" alt="bacia antiga" title="bacia antiga" href="../mapa/áreas/bacia_antiga.html" coords="551,452,470,484" shape="rect">
+    <area target="_self" alt="bacia antiga" title="bacia antiga" href="../mapa/áreas/bacia_antiga.html" coords="427,484,628,548" shape="rect">
+    <area target="_self" alt="bacia antiga" title="bacia antiga" href="../mapa/áreas/bacia_antiga.html" coords="404,538,552,479" shape="rect">
+    <area target="_self" alt="bacia antiga" title="bacia antiga" href="../mapa/áreas/bacia_antiga.html" coords="326,486,406,538" shape="rect">
 </map>
     </div>
   </div>
@@ -109,67 +112,9 @@
 </html>
 
 <script>
+  nome_input.innerHTML = sessionStorage.NOME_USUARIO;
+
   function logo_landing_page() {
     window.location.href = '../index.html';
-  }
-
-  function penhascos_uivantes() {
-    window.location.href="../mapa/áreas/penhascos_uivantes.html";
-  }
-  
-  function dirtmouth() {
-    window.location.href="../mapa/áreas/dirtmouth.html";
-  }
-
-  function pico_de_cristal() {
-    window.location.href="../mapa/áreas/pico_de_cristal.html";
-  }
-
-  function caminho_verde() {
-    window.location.href="../mapa/áreas/caminho_verde.html";
-  }
-
-  function encruzilhada_esquecida() {
-    window.location.href="../mapa/áreas/encruzilhada_esquecida.html";
-  }
-
-  function terra_do_descanso() {
-    window.location.href="../mapa/áreas/terra_do_descanso.html";
-  }
-
-  function jardins_da_rainha() {
-    window.location.href="../mapa/áreas/jardins_da_rainha.html";
-  }
-
-  function canion_da_nevoa() {
-    window.location.href="../mapa/áreas/canion_da_nevoa.html";
-  }
-
-  function ermos_fungicos() {
-    window.location.href="../mapa/áreas/ermos_fungicos.html";
-  }
-
-  function cidade_das_lagrimas() {
-    window.location.href="../mapa/áreas/cidade_das_lagrimas.html";
-  }
-
-  function borda_do_reino() {
-    window.location.href="../mapa/áreas/borda_do_reino.html";
-  }
-
-  function ninho_profundo() {
-    window.location.href="../mapa/áreas/ninho_profundo.html";
-  }
-
-  function hidrovia_real() {
-    window.location.href="../mapa/áreas/hidrovia_real.html";
-  }
-
-  function colmeia() {
-    window.location.href="../mapa/áreas/a_colmeia.html";
-  }
-
-  function bacia_antiga() {
-    window.location.href="../mapa/áreas/bacia_antiga.html";
   }
 </script>
