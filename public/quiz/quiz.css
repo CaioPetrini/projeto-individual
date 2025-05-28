@@ -2,8 +2,8 @@
 /* The 4-point grid system: https://medium.com/@sainzkike/controlling-spacing-in-design-systems-multiple-spacing-9bf1afec87f */
 
 :root {
-    --primary-brand-color: #ED145B;
-    --secondary-brand-color: #0762C8;
+    --primary-brand-color: #909090;
+    --secondary-brand-color: #000717;
     --success: #198754;
     --success-dark: #095c36;
     --success-light: #9dd3ba;
@@ -18,10 +18,21 @@
     --new-white: #E8E8E8;
 }
 
+@font-face {
+  font-family: 'poppins';
+  src: url(../font/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'trajan';
+  src: url(../font/Trajan-Pro-Bold/Trajan\ Pro\ Bold.ttf)
+}
+
 body {
-    color: var(--new-black);
-    background-color: var(--new-white);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: white;
 }
 
 button {
@@ -39,11 +50,11 @@ button {
 }
 
 .border-primary {
-    border: 3px solid var(--primary-brand-color);
+    border: 1px solid var(--primary-brand-color);
 }
 
 .border-secondary {
-    border: 3px solid var(--secondary-brand-color);
+    border: 1px solid var(--primary-brand-color);
 }
 
 .padding-8 {
@@ -71,4 +82,159 @@ button {
 
 .text-new-gray {
     color: var(--new-gray);
+}
+
+#pontuacaoEJogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    flex-direction: row-reverse;
+    border: 10px solid black;
+    font-family: 'poppins';
+    width: 100%;
+}
+
+#btnIniciarQuiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 175px;
+    background-color: black;
+    border: 2px solid var(--primary-brand-color);
+    color: white;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: 'trajan';
+    margin-right: 870px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 150px;
+  margin-top: 20px;
+  margin-left: 10px;
+  background-color: #000000;
+  border: 2px solid #909090;
+  border-radius: 15px;
+  font-size: 20px;
+  font-family: 'poppins';
+  color: white;
+  margin-left: 115px;
+}
+
+.titulo img:hover {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  height: 140px;
+  width: 100%;
+  border-bottom: 1px solid #909090;
+  justify-content: space-between;
+}
+
+.link_mapa {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  font-family: 'trajan';
+  font-size: 30px;
+}
+
+area:hover {
+    cursor: pointer;
+}
+
+a {
+  color: white;
+}
+
+.container {
+  display: flex;
+  height: 661px;
+  justify-content: center;
+  font-family: 'poppins';
+  font-size: 25px;
+  align-content: center;
+  align-self: center;
+}
+
+.footer {
+  background-color: #000717;
+  height: 139px;
+  color: #fff;
+  display: flex;
+  border-top: 1px solid #909090;
+  font-family: 'poppins';
+  flex-direction: column;
+}
+
+.container6 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+}
+
+.footer .contato {
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 250px;
+}
+
+.footer .email {
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.footer .telefone {
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  margin-right: 250px;
+}
+
+.footer .mensagem {
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 40px;
+  background-color: #000717;
+}
+
+.flex-colunar button {
+    display: flex;
+    background-color: #000000;
+    color: white;
+    height: 50px;
+    width: 150px;
+    border: 2px solid white;
+    font-family: 'trajan';
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-colunar-padding-8 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#div_mensagem_redirecionamento {
+    font-family: 'poppins';
 }

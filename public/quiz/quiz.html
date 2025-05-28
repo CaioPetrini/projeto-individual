@@ -4,70 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo - Quiz</title>
+    <title>HollowGuide | Quiz</title>
     <link rel="stylesheet" href="quiz.css">
+    <link rel="icon" href="./../assets/icon/icon.png" />
 </head>
 
 
 <body onload="onloadEsconder()">
-    <div id="pontuacaoEJogo">
-        <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+    <div class="header">
+        <div class="container2">
+            <div class="titulo"><img onclick="logo_landing_page()" src="../assets/imgs/titulo hollow guide.png"
+                    width="300" height="150"></div>
+        </div>
+        <div class="link_mapa"><a href="../mapa/mapa-interativo.html">Mapa</a></div>
+    </div>
+    <div class="container">
+        <div id="pontuacaoEJogo">
+            <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
 
-        <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-            <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
-                <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
-                <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
+            <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
+                <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
+                    <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
+                    <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
+                </div>
+                <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
+                    <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
+                        <span id="spanPontuacaoFinal">***</span>
+                    </span>
+                    <span id="msgFinal" class="width-fit-content">***</span>
+                </div>
             </div>
-            <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
-                <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
-                    <span id="spanPontuacaoFinal">***</span>
-                </span>
-                <span id="msgFinal" class="width-fit-content">***</span>
+
+            <div id="jogo" class="width-fit-content flex-colunar border-secondary">
+
+                <div id="infoQuestao" class="padding-8">
+                    <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
+                        questões.</span>
+                </div>
+
+                <div id="perguntaDaQuestaoAtual" class="padding-8">
+                    <span id="spanQuestaoExibida" class="text-bold"></span>
+                </div>
+
+                <div id="infoAlternativas" class="padding-8">
+                    <span><em>Escolha uma opção dentre as abaixo:</em></span>
+                </div>
+
+                <div id="opcoes" class="flex-colunar padding-8">
+                    <span>
+                        <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
+                        <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
+                        <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
+                        <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
+                        <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+                    </span>
+                </div>
+
+                <div id="botoes" class="flex-colunar-padding-8">
+                    <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
+                    <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
+                    <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
+                    <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
+                </div>
+
             </div>
         </div>
-
-        <div id="jogo" class="width-fit-content flex-colunar border-secondary">
-
-            <div id="infoQuestao" class="padding-8">
-                <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
-                    questões.</span>
-            </div>
-
-            <div id="perguntaDaQuestaoAtual" class="padding-8">
-                <span id="spanQuestaoExibida" class="text-bold"></span>
-            </div>
-
-            <div id="infoAlternativas" class="padding-8">
-                <span><em>Escolha uma opção dentre as abaixo:</em></span>
-            </div>
-
-            <div id="opcoes" class="flex-colunar padding-8">
-                <span>
-                    <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
-                    <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
-                </span>
-                <span>
-                    <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
-                    <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
-                </span>
-                <span>
-                    <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
-                    <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
-                </span>
-                <span>
-                    <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
-                    <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
-                </span>
-            </div>
-
-            <div id="botoes" class="flex-colunar padding-8">
-                <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
-                <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
-                <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
-                <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
-            </div>
-
+    </div>
+    <div class="footer">
+        <div class="container6">
+            <div class="contato">E-mail e Telefone para contato:</div>
+            <div class="email">E-mail: caio.asouza@sptech.school</div>
+            <div class="telefone">Telefone: (11) 95302-7209</div>
         </div>
+        <div class="mensagem">Feito por aluno SPTech © 2025</div>
     </div>
 </body>
 
@@ -76,30 +94,93 @@
     const listaDeQuestoes = [
 
         {
-            pergunta: "Qual mês tem 30 dias?",
-            alternativaA: "Janeiro",
-            alternativaB: "Dezembro",
-            alternativaC: "Junho",
-            alternativaD: "Agosto",
+            pergunta: "Qual é o nome do protagonista controlado pelo jogador em Hollow Knight?",
+            alternativaA: "Hornet",
+            alternativaB: "The Knight",
+            alternativaC: "The Hollow Knight",
+            alternativaD: "Zote",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Qual é o nome da cidade central do mapa, onde o jogador acessa pela primeira vez o transporte do Último Besouro?",
+            alternativaA: "Cidade das Lágrimas",
+            alternativaB: "Ermos Fúngicos",
+            alternativaC: "Encruzilhada Esquecida",
+            alternativaD: "Borda do Reino",
             alternativaCorreta: "alternativaC"
         },
 
         {
-            pergunta: "Quantas horas tem em um dia?",
-            alternativaA: "30 horas",
-            alternativaB: "38 horas",
-            alternativaC: "48 horas",
-            alternativaD: "24 horas",
+            pergunta: "Quem é o primeiro chefe obrigatório encontrado no jogo?",
+            alternativaA: "Falso Cavaleiro",
+            alternativaB: "Nosk",
+            alternativaC: "Guerreira Hornet",
+            alternativaD: "Mestre das Almas",
+            alternativaCorreta: "alternativaA"
+        },
+
+        {
+            pergunta: "Qual é a função dos Amuletos no jogo?",
+            alternativaA: "Liberar novos mapas",
+            alternativaB: "Substituir os chefes",
+            alternativaC: "Liberar novas armas",
+            alternativaD: "Adicionar habilidades passivas ao personagem",
             alternativaCorreta: "alternativaD"
         },
 
         {
-            pergunta: "Qual destes números é ímpar?",
-            alternativaA: "Dez",
-            alternativaB: "Doze",
-            alternativaC: "Oito",
-            alternativaD: "Onze",
+            pergunta: "Como se chama a criatura que ajuda o jogador a mapear as áreas?",
+            alternativaA: "Salubra",
+            alternativaB: "Cornifer",
+            alternativaC: "Brumm",
+            alternativaD: "Grimm",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Qual é o recurso usado para recuperar vida usando Foco?",
+            alternativaA: "Geo",
+            alternativaB: "Mana",
+            alternativaC: "Alma",
+            alternativaD: "Névoa",
+            alternativaCorreta: "alternativaC"
+        },
+
+        {
+            pergunta: "Quem é a personagem que desafia o jogador em combates ao longo do jogo e é muito importante na história?",
+            alternativaA: "Quirrel",
+            alternativaB: "Hornet",
+            alternativaC: "Myla",
+            alternativaD: "Bretta",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "O que é necessário para desbloquear o final verdadeiro de Hollow Knight?",
+            alternativaA: "Derrotar todos os chefes opcionais",
+            alternativaB: "Obter o Amuleto do Rei do Vazio (Void Heart)",
+            alternativaC: "Coletar todas as máscaras",
+            alternativaD: "Subir no topo dos Penhascos Uivantes",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Como se chama o sistema de viagem rápida no jogo?",
+            alternativaA: "Trilho Antigo",
+            alternativaB: "Metrô do Vazio",
+            alternativaC: "Bonde",
+            alternativaD: "O Último Besouro",
             alternativaCorreta: "alternativaD"
+        },
+
+        {
+            pergunta: "Qual é o nome da sequência anunciada de Hollow Knight?",
+            alternativaA: "Hollow Knight: Rebirth",
+            alternativaB: "Hollow Knight: Silksong",
+            alternativaC: "Hollow Knight: Shadows",
+            alternativaD: "Hollow Knight: Return of the Void",
+            alternativaCorreta: "alternativaB"
         }
 
     ]
@@ -271,19 +352,29 @@
             classComCoresParaMensagemFinal = "text-success-with-bg"
         }
 
-        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
+        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos) * 100) + "% das questões. <br> Redirecionando você para a Dashboard em 4 segundos..."
 
 
         document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
-        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal) 
+        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal)
         document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
 
-        document.getElementById('jogo').classList.add("text-new-gray") 
+        document.getElementById('jogo').classList.add("text-new-gray")
 
         btnProx.disabled = true
         btnSubmeter.disabled = true
         // btnConcluir.disabled = true
         btnTentarNovamente.disabled = false
 
+        setTimeout(redirecionarParaDashboard, 4000);
+
+    }
+
+    function redirecionarParaDashboard() {
+        window.location.href = '../dashboard/dashboard.html'
+    }
+
+    function logo_landing_page() {
+        window.location.href = '../index.html'
     }
 </script>
