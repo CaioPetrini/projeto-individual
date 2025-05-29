@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hollow Guide | Dashboard</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="../assets/icon/icon.png"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -15,7 +16,7 @@
         <div>
             <div class="barra_lateral">
                 <div class="lateral_container">
-                    <img src="../assets/imgs/titulo hollow guide.png" alt="">
+                    <img onclick="logo_landing_page()" src="../assets/imgs/titulo hollow guide.png">
                 </div>
             </div>
         </div>
@@ -33,19 +34,6 @@
             </div>
             <div class="conteudo_principal">
                 <div class="conteudo_principal_div">
-                    <div class="button_zone">
-                        <div class="buttons">
-                            <button>
-                               hectares
-                            </button>
-                            <button>
-                                setores
-                            </button>
-                            <button id="sensores">
-                               sensores 
-                            </button>
-                        </div>
-                    </div>
                         <div class="zona_1">
                             <div class="temp">
                                 <div class="container_img">
@@ -64,7 +52,7 @@
                             <div class="KPI_container">
                                 <div class="KPIs">
                                     <div class="KPI">
-                                        <p>Umidade atual da Plantação Hectare/Setores/Sensor</p>
+                                        <p>Percentual do mapa mais acessado entre todos os usuários</p>
                                         <div>
                                             <img src="../images/fi-sr-feather.png" alt="">
                                             <p>20%</p>
@@ -72,7 +60,7 @@
                                         
                                     </div>
                                     <div class="KPI">
-                                        <p>Umidade atual da Plantação Hectare/Setores/Sensor</p>
+                                        <p>Sua maior pontuação</p>
                                         <div>
                                             <img src="../images/fi-sr-feather.png" alt="">
                                             <p>20%</p>
@@ -80,7 +68,7 @@
                                         
                                     </div>
                                     <div class="KPI">
-                                        <p>Umidade atual da Plantação Hectare/Setores/Sensor</p>
+                                        <p>Média de idade de todos os usuários OU Média de pontuação do usuário</p>
                                         <div>
                                            <img src="../images/fi-sr-feather.png" alt="">
                                            <p>20%</p>
@@ -94,9 +82,8 @@
                             <div class="graficos">
                                 <div class="grafico1">
                                     <div class="title_button">
-                                        <p>media umidade mensal hectare</p>
-                                        <button>01/01/25</button>
-                                        <div class="umidade">Umidade</div>
+                                        <p>Histórico de tentativas</p>
+                                        <div class="umidade">Pontuação</div>
                                     </div>
                                     <!-- gráfico 01 -->
                                     <div class="graf01">
@@ -105,10 +92,10 @@
                                 </div>
                                 <div class="grafico2">
                                     <div class="title_button">
-                                        <p>media umidade mensal hectare</p> 
+                                        <p>Percentual de usuários que tiveram a pontuação entre 60% e 100%</p> 
                                         
                                     </div>
-                                    <!-- gráfico 01 -->
+                                    <!-- gráfico 02 -->
                                     <div class="graf02">
                                         <canvas id="myChart02"></canvas>
                                     </div>
@@ -119,9 +106,8 @@
                             <div class="graficos">
                                 <div class="grafico_final">
                                     <div class="title_button">
-                                        <p>media umidade mensal hectare</p> 
-                                        <button>Janeiro</button>
-                                        <div class="umidade">Umidade</div>
+                                        <p>Percentual de erros por questão</p> 
+                                        <div class="umidade">Percentual</div>
                                     </div>
                                     <!-- gráfico 03 -->
                                     <div class="graf03">
@@ -137,4 +123,4 @@
 </body>
 </html>
 
-<script src="script.js"></script>
+<script src="../js/script.js"></script>

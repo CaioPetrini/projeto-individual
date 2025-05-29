@@ -4,6 +4,11 @@
     padding: 0;
     margin: 0;
   font-family: "poppins", sans-serif;
+  color: white;
+}
+
+body {
+    background-color: black;
 }
 
 .container_geral {
@@ -17,7 +22,9 @@
 /* BARRA LATERAL */
 
 .barra_lateral {
-    background-color: #252525 ;
+    display: flex;
+    align-items: start;
+    background-color: #000717;
     height: 100vh;
     width: 10vw;
 }
@@ -48,6 +55,7 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    background-color: #000000;
 }
 
 
@@ -56,7 +64,6 @@
     padding: 0px 20px;
     font-weight: normal;
 }
-
 
 
 .header_div2 {
@@ -71,8 +78,12 @@
 
 }
 
+.lateral_container img:hover {
+    cursor: pointer;
+}
+
 .conteudo_principal {
-    background-color: #FFFFFF;
+    background-color: black;
     height: 93.4%; 
     width:  100%;
     display: flex;
@@ -81,7 +92,7 @@
 }
 
 .conteudo_principal_div {
-    background-color: rgb(255, 255, 255);
+    background-color: black;
     width: 97%;
     height: 98%;
     display: flex;
@@ -133,7 +144,7 @@ button {
 .temp {
     width: 20%;         /* ou o tamanho desejado */
     height: 20vh;        /* altura definida */
-    background-color: rgb(255, 255, 255);
+    background-color: black;
     display: flex;
     align-items: center;
     overflow: hidden;    /* impede vazamento de conteúdo */
@@ -177,15 +188,16 @@ button {
     align-items: center;
    width: 100%;
    height: 100%;
+   background-color: black;
    
 }
 .KPI {
     width: 100%;
-    background-color: #F5F5F5;
+    background-color: #000717;
     border-radius: 10px;
     overflow: hidden;    /* impede que o conteúdo vaze */
     padding: 5px 20px;
-    border: 2px solid #D8D8DC;
+    border: 2px solid #909090;
     height: 100%;
     gap: 20px;
     display: flex;
@@ -221,12 +233,13 @@ button {
     display: flex;
     gap: 20px;
     height: 100%;
+    background-color: #000717;
 }
 
 .grafico1 {
     width: 70%;
     height:100%;
-    background-color: #F5F5F5;
+    background-color: #000717;
     border-radius: 10px;
     border: 2px solid #D8D8DC;
     display: flex;
@@ -244,7 +257,7 @@ button {
 .grafico2 { 
     width: 50%;
     height:100% ;
-    background-color: #F5F5F5;
+    background-color: #000717;
     border-radius: 10px;
     border: 2px solid #D8D8DC;
     display: flex;
@@ -269,7 +282,7 @@ button {
 
 .grafico_final {
     width: 100%;
-    background-color: #F5F5F5;
+    background-color: #000717;
     height: 100%;
     border-radius: 10px;
     border: 2px solid #D8D8DC;
