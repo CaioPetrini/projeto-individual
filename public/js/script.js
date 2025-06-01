@@ -16,7 +16,7 @@ data = {
             pointStyle: false
         },
         {
-            label: 'Pontuação Média',
+            label: 'Média',
             backgroundColor: ' #F8A720',
             borderColor: ' #F8A720',
             data: [60, 60, 60, 60, 60, 60],
@@ -50,10 +50,10 @@ new Chart(grafico2, {
     type: 'doughnut',
     data: {
         datasets: [{
-            label: ['Não Funcionando',
-                'Funcionando'],
-            backgroundColor: [' #FF9F00',
-                ' #6D54EE'],
+            label: ['Acima da média',
+                'Abaixo da Média'],
+            backgroundColor: [' #eb3434',
+                ' #34eb71'],
             data: [20, 200],
             borderWidth: 1,
             pointStyle: false
@@ -72,16 +72,7 @@ new Chart(grafico3, {
         labels: ['1', '2', '3', '4', '5', '6','7','8','9','10'],
         datasets: [{
             type: 'line',
-            label: 'Umidade Máxima',
-            backgroundColor: ' #FF0004',
-            borderColor: ' #FF0004',
-            data: [80, 80, 80, 80, 80, 80,80,80,80,80,80,80],
-            borderWidth: 1,
-            pointStyle: false
-        },
-        {
-            type: 'line',
-            label: 'Umidade Mínima',
+            label: 'Média',
             backgroundColor: ' #F8A720',
             borderColor: ' #F8A720',
             data: [60, 60, 60, 60, 60, 60,60,60,60,60,60,60, 60, 60, 60],
@@ -89,7 +80,7 @@ new Chart(grafico3, {
             pointStyle: false
         },
         {
-            label: 'Umidade',
+            label: 'Pontuação',
             backgroundColor: ' #6D54EE',
             borderColor: ' #6D54EE',
             data: [24,55,30,45,65,55,26,40,85,40,10,55],
