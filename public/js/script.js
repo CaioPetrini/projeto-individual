@@ -8,15 +8,7 @@ data = {
 
         labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
         datasets: [{
-            label: 'Umidade Máxima',
-            backgroundColor: ' #FF0004',
-            borderColor: ' #FF0004',
-            data: [80, 80, 80, 80, 80, 80],
-            borderWidth: 1,
-            pointStyle: false
-        },
-        {
-            label: 'Umidade',
+            label: 'Pontuação',
             backgroundColor: ' #6D54EE',
             borderColor: ' #6D54EE',
             data: [70, 47, 66, 75, 62, 65],
@@ -24,7 +16,7 @@ data = {
             pointStyle: false
         },
         {
-            label: 'Umidade Mínima',
+            label: 'Pontuação Média',
             backgroundColor: ' #F8A720',
             borderColor: ' #F8A720',
             data: [60, 60, 60, 60, 60, 60],

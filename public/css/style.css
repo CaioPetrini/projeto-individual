@@ -151,6 +151,11 @@ button {
         flex-direction: column;
 }
 
+.temp img {
+    display: flex;
+    border-radius: 20px;
+}
+
 .temp div {
     display: flex;
     justify-content: start;
