@@ -27,6 +27,23 @@ body {
     background-color: #000717;
     height: 100vh;
     width: 10vw;
+    flex-direction: column;
+    align-content: center;
+}
+
+.botao_barra_lateral button {
+  background-color: transparent;
+  color: white;
+  border-color: transparent;
+  font-family: 'poppins';
+  font-size: 30px;
+  text-decoration: underline;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .lateral_container {
@@ -223,6 +240,12 @@ button {
 
 .KPI div p {
     font-size: 30px;
+}
+
+.kpi_texto {
+    display: flex;
+    font-size: 75px;
+    align-self: center;
 }
 
 

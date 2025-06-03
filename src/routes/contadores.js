@@ -17,4 +17,12 @@ router.get("/listar", function (req, res) {
     contadoresController.listar(req, res);
 });
 
+router.post("/registrarAcesso", function (req, res) {
+    contadoresController.registrarAcesso(req, res);
+});
+
+router.get("/kpi", function (req, res) {
+    contadoresController.kpiMapaMaisAcessado(req, res);
+});
+
 module.exports = router;

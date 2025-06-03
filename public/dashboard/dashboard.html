@@ -22,6 +22,8 @@
                 <div class="lateral_container">
                     <img onclick="logo_landing_page()" src="../assets/imgs/titulo hollow guide.png">
                 </div>
+                <div class="botao_barra_lateral"><button onclick="mapa_interativo()">Mapa</button></div>
+                <div class="botao_barra_lateral"><button onclick="quiz()">Quiz</button></div>
             </div>
         </div>
         <div>
@@ -53,10 +55,7 @@
                             <div class="KPIs">
                                 <div class="KPI">
                                     <p>Percentual do mapa mais acessado entre todos os usuários</p>
-                                    <div>
-                                        <img src="../images/fi-sr-feather.png" alt="">
-                                        <p>20%</p>
-                                    </div>
+                                    <div class="kpi_texto" id="kpi-container"></div>
 
                                 </div>
                                 <div class="KPI">
@@ -120,8 +119,22 @@
             </div>
         </div>
     </div>
+
+    <script src="../js/kpiMapa.js"></script>
+    <script>carregarKPI();</script>
+
 </body>
 
 </html>
+
+<script>
+    function mapa_interativo() {
+        window.location.href = ('../mapa/mapa-interativo.html');
+    }
+
+    function quiz() {
+        window.location.href = ('../quiz/quiz.html');
+    }
+</script>
 
 <script src="../js/script.js"></script>
