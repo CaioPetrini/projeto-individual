@@ -340,19 +340,19 @@
         const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
 
         if (porcentagemFinalDeAcertos <= 0.3) {
-            textoParaMensagemFinal = "Parece que você não estudou..."
+            textoParaMensagemFinal = "Você é um novato em Hollow Knight..."
             classComCoresParaMensagemFinal = "text-danger-with-bg"
         }
         else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
-            textoParaMensagemFinal = "Pode melhorar na próxima, hein!"
+            textoParaMensagemFinal = "Você é um jogador casual de Hollow Knight"
             classComCoresParaMensagemFinal = "text-warning-with-bg"
         }
         else if (porcentagemFinalDeAcertos >= 0.9) {
-            textoParaMensagemFinal = "Uau, parabéns!"
+            textoParaMensagemFinal = "Você é um profissional em Hollow Knight"
             classComCoresParaMensagemFinal = "text-success-with-bg"
         }
 
-        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos) * 100) + "% das questões. <br> Redirecionando você para a Dashboard em 4 segundos..."
+        textoParaMensagemFinal += "<br> A sua pontuação foi " + Math.round((porcentagemFinalDeAcertos) * 100) + "% de 100%. <br> Redirecionando você para a Dashboard em 10 segundos..."
 
 
         document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
@@ -366,7 +366,7 @@
         // btnConcluir.disabled = true
         btnTentarNovamente.disabled = false
 
-        setTimeout(redirecionarParaDashboard, 4000);
+        setTimeout(redirecionarParaDashboard, 10000);
 
     }
 

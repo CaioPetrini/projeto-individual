@@ -181,60 +181,20 @@
     window.location.href = '../index.html';
   }
 
-  function inserirContadores(valor) {
-
-  }
-
-  // var idMapa = [];
-  // var acessoAtual = [];
-
-  // function select(){
-  //   debugger
-
-  //     fetch(`/contadores/selectAllMapa`, {
-  //           method: "GET",
-  //           headers: {
-  //               "Content-Type": "application/json"
-  //           },
-  //       })
-  //       .then(res => res.json())        
-  //       .then(function (resposta) {
-  //         for(var i = 0; i < resposta.length; i++){
-  //             var idAtual = resposta[i].id
-  //             var acessoAtual = resposta[i].acessos
-  //             idMapa.push(idAtual)
-  //             acessoAtual.push(acessos)
-  //          }
-  //       })
-  // }
-
-
-
-  //       console.log(idMapa)
-
+  function inserirContadores(valor) {}
 
   function penhascos_uivantes(valor) {
-    console.log(valor)
-    var contadorPenhascos_uivantes = 0;
-    contadorPenhascos_uivantes++;
-    var id = Number(idMapa[0])
-    var incrememento = contadorPenhascos_uivantes++ + 1
-
-    fetch(`/contadores/UPDATE/${id}`, {
-      method: "UPDATE",
+    
+    fetch("http://localhost:3333/contadores/registrarAcesso", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        accessos: incrememento
-      }),
-    }).then(function (resposta) {
-      for (var i = 0; i < resposta.length; i++) {
-        var idAtual = resposta[i]
-        idMapa.push(idAtual)
-      }
-
+      body: JSON.stringify({ idMapa: 1 })
     })
+      .then(res => res.json())
+      .then(data => console.log("Resposta do backend:", data))
+      .catch(erro => console.error("Erro ao registrar acesso:", erro));
 
   }
 
@@ -245,7 +205,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 2 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 2 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -260,7 +220,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 3 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 3 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -275,7 +235,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 4 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 4 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -290,7 +250,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 5 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 5 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -305,7 +265,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 6 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 6 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -320,7 +280,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 7 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 7 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -335,7 +295,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 8 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 8 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -350,7 +310,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 9 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 9 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -365,7 +325,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 10 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 10 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -380,7 +340,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 11 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 11 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -395,7 +355,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 12 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 12 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -410,7 +370,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 13 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 13 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -425,7 +385,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 14 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 14 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -440,7 +400,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 15 }) // ou o ID correspondente ao mapa acessado
+      body: JSON.stringify({ idMapa: 15 })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))

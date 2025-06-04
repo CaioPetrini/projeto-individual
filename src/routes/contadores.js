@@ -25,4 +25,8 @@ router.get("/kpi", function (req, res) {
     contadoresController.kpiMapaMaisAcessado(req, res);
 });
 
+router.get("/kpi2", function (req, res) {
+    contadoresController.kpiMapaMaisAcessadoUsuario(req, res);
+});
+
 module.exports = router;
