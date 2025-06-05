@@ -177,6 +177,7 @@
 <script>
   nome_input.innerHTML = sessionStorage.NOME_USUARIO;
 
+  var idUsuario = sessionStorage.ID_USUARIO;
   function logo_landing_page() {
     window.location.href = '../index.html';
   }
@@ -190,7 +191,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 1 })
+      body: JSON.stringify({ idMapa: 1, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -205,7 +206,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 2 })
+      body: JSON.stringify({ idMapa:2, idUsuario:  idUsuario})
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -220,7 +221,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 3 })
+      body: JSON.stringify({ idMapa: 3, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -235,7 +236,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 4 })
+      body: JSON.stringify({ idMapa: 4, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -250,7 +251,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 5 })
+      body: JSON.stringify({ idMapa: 5, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -265,7 +266,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 6 })
+      body: JSON.stringify({ idMapa: 6, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -280,7 +281,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 7 })
+      body: JSON.stringify({ idMapa: 7, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -295,7 +296,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 8 })
+      body: JSON.stringify({ idMapa: 8, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -310,7 +311,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 9 })
+      body: JSON.stringify({ idMapa: 9, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -325,7 +326,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 10 })
+      body: JSON.stringify({ idMapa: 10, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -340,7 +341,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 11 })
+      body: JSON.stringify({ idMapa: 11, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -355,7 +356,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 12 })
+      body: JSON.stringify({ idMapa: 12, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -370,7 +371,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 13 })
+      body: JSON.stringify({ idMapa: 13, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -385,7 +386,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 14 })
+      body: JSON.stringify({ idMapa: 14, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))
@@ -400,7 +401,7 @@
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ idMapa: 15 })
+      body: JSON.stringify({ idMapa: 15, idUsuario:  idUsuario })
     })
       .then(res => res.json())
       .then(data => console.log("Resposta do backend:", data))

@@ -11,6 +11,8 @@ function listar(req, res) {
 
 function registrarAcesso(req, res) {
     var idMapa = req.body.idMapa;
+    var idUsuario = req.body.idUsuario
+
 
     console.log("Recebido acesso ao mapa ID:", idMapa);
 
@@ -20,7 +22,7 @@ function registrarAcesso(req, res) {
         return;
     }
 
-    contadoresModel.incrementarAcesso(idMapa).then(resultado => {
+    contadoresModel.incrementarAcesso(idMapa, idUsuario).then(resultado => {
         console.log("Acesso registrado com sucesso!");
         res.status(200).json({ mensagem: "Acesso registrado com sucesso" });
     }).catch(erro => {

@@ -10,10 +10,28 @@ function listar() {
 
 function incrementarAcesso(idMapa, idUsuario) {
     var instrucao = `
-        UPDATE mapa SET contadorAcessos = contadorAcessos + 1 WHERE idMapa = ${idMapa} AND fkUsuario = ${idUsuario};
+        UPDATE mapa SET contadorAcessos = contadorAcessos + 1 WHERE idMapa = ${idMapa};
+
+       
     `;
     console.log("Executando a instrução SQL:\n" + instrucao);
-    return database.executar(instrucao);
+    return database.executar(instrucao).then(( ) => {
+
+        var instrucao2 = `
+        SELECT * FROM area WHERE fkUsuarioMapa = ${idUsuario} AND fkMapa = ${idMapa};
+        `;
+    console.log("Executando a instrução SQL:\n" + instrucao2);
+    return database.executar(instrucao2).then((resposta) => {
+        var instrucao3 = ``
+        if (resposta.length > 0){
+            instrucao3 = `UPDATE area SET contadorAcessosUsuario = contadorAcessosUsuario + 1 WHERE fkUsuarioMapa = ${idUsuario} AND fkMapa = ${idMapa};`;
+        } else {
+            instrucao3 = `INSERT INTO area (fkUsuarioMapa, fkMapa, contadorAcessosUsuario) VALUES (${idUsuario}, ${idMapa}, 1);`;
+        }
+    console.log("Executando a instrução SQL:\n" + instrucao3);
+        return database.executar(instrucao3)
+    })
+    });
 }
 
 function obterMapaMaisAcessado() {

@@ -6,11 +6,7 @@ async function carregarKPI() {
         const kpi2Container = document.getElementById("kpi2-container");
         kpi2Container.innerHTML = `${dados.nome}:
         ${dados.percentual}%`
-        //`
-        //     Mapa Mais Acessado: ${dados.nome} <br>
-        //     ${dados.percentual}% dos acessos
-        // `;
-    } catch (erro) {
+          } catch (erro) {
         console.error("Erro ao carregar KPI:", erro);
     }
 }
