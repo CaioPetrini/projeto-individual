@@ -41,7 +41,9 @@ function kpiMapaMaisAcessado(req, res) {
 }
 
 function kpiMapaMaisAcessadoUsuario(req, res) {
-    contadoresModel.obterMapaMaisAcessadoUsuario().then(resultado => {
+    var idUsuario = req.params.idUsuario;
+
+    contadoresModel.obterMapaMaisAcessadoUsuario(idUsuario).then(resultado => {
         res.status(200).json(resultado[0]);
     }).catch(erro => {
         console.error(erro);

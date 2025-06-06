@@ -41,9 +41,9 @@ function obterMapaMaisAcessado() {
     return database.executar(instrucao);
 }
 
-function obterMapaMaisAcessadoUsuario() {
+function obterMapaMaisAcessadoUsuario(idUsuario) {
     var instrucao = `
-        SELECT u.nome, m.nome, m.contadorAcessos, TRUNCATE((SELECT (COUNT(contadorAcessos)) * 100 / COUNT(contadorAcessos) FROM mapa WHERE idUsuario = 1), 0) AS percentual FROM mapa AS m JOIN area AS a ON a.fkMapa = m.idMapa JOIN usuario AS u ON fkUsuarioMapa = u.idUsuario GROUP BY u.idUsuario, m.nome, m.contadorAcessos ORDER BY m.contadorAcessos DESC LIMIT 1;
+        SELECT u.nome AS Usuário, m.nome AS Mapa, CONCAT(ROUND(a.contadorAcessosUsuario * 100.0 / (SELECT SUM(ae.contadorAcessosUsuario) FROM area ae WHERE ae.fkUsuarioMapa = u.idUsuario), 0), '%') AS porcentagem FROM usuario u JOIN area a ON u.idUsuario = a.fkUsuarioMapa JOIN mapa m ON a.fkMapa = m.idMapa WHERE u.idUsuario = ${idUsuario} ORDER BY a.contadorAcessosUsuario DESC LIMIT 1;
     `;
     return database.executar(instrucao);
 }
