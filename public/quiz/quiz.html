@@ -24,6 +24,7 @@
 
             <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
                 <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
+                    <span class="width-fit-content">Tempo: <span id="temporizador">00:00</span></span>
                     <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
                     <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
                 </div>
@@ -91,6 +92,10 @@
 
 </html>
 <script>
+    let minutos = 0;
+    let segundos = 0; // na aula do JP aprendemos que let não pode ser redeclarada no mesmo escopo, mas pode ser reatribuída
+    let intervalo; // essa variável serve para guardar o relógio que roda a cada segundo
+
     const listaDeQuestoes = [
 
         {
@@ -212,6 +217,8 @@
         btnProx.disabled = true
         // btnConcluir.disabled = true
         btnTentarNovamente.disabled = true
+
+        iniciarTemporizador(); // FUNÇÃO PARA INICIAR O TEMPORIZADOR SOMENTE QUANDO O USUÁRIO CLICAR EM INCIAR QUIZ
     }
 
     function preencherHTMLcomQuestaoAtual(index) {
@@ -352,29 +359,65 @@
             classComCoresParaMensagemFinal = "text-success-with-bg"
         }
 
-        textoParaMensagemFinal += "<br> A sua pontuação foi " + Math.round((porcentagemFinalDeAcertos) * 100) + "% de 100%. <br> Redirecionando você para a Dashboard em 10 segundos..."
+        textoParaMensagemFinal += "<br> A sua pontuação foi " + Math.round((porcentagemFinalDeAcertos) * 100) + "% de 100%. <br> Redirecionando você para a Dashboard em 10 segundos...";
 
-
+        
         document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
         document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal)
         document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
-
+        
         document.getElementById('jogo').classList.add("text-new-gray")
-
+        
         btnProx.disabled = true
         btnSubmeter.disabled = true
         // btnConcluir.disabled = true
         btnTentarNovamente.disabled = false
-
+        
+        pararTemporizador(); // chamei a função pararTemporizador aqui para assim que o usuário finalizar, aparecer o temporizador parado, mostrando o tempo que ele demorou  
+        
         setTimeout(redirecionarParaDashboard, 10000);
-
     }
 
+    function pararTemporizador() {
+        clearInterval(intervalo); // trava o temporizador
+    }
+    
     function redirecionarParaDashboard() {
         window.location.href = '../dashboard/dashboard.html'
     }
 
     function logo_landing_page() {
         window.location.href = '../index.html'
+    }
+
+    // LÓGICA DO TEMPORIZADOR
+
+    function atualizarTemporizador() { // essa função atualiza o texto do cronômetro na tela
+        const min = String(minutos).padStart(2, '0'); // na aula do JP aprendemos que const não pode ser redeclarada nem reatribuída
+        const seg = String(segundos).padStart(2, '0'); // a string serve para transofrmar o número em texto e esse .padStart(2, '0') coloca um 0 na frente se o número tiver apenas um dígito
+        document.getElementById("temporizador").innerText = min + ":" + seg; // esta puxando o elemento pelo id e formatando para um temporizador
+    }
+
+    // Inicia o cronômetro automaticamente
+    function iniciarTemporizador() {
+        intervalo = setInterval(() => { // arrowfunction para chamar uma função
+            segundos++;
+            if (segundos === 60) {
+                segundos = 0;
+                minutos++;
+            }
+
+            if (minutos === 60) {
+                pararTemporizador();
+                alert("Tempo máximo atingido (59:59)!");
+                return; // serve para guardar o resultado ou usar ele em outro lugar
+            }
+
+            atualizarTemporizador();
+        }, 1000);
+    }
+
+    function pegarTempoFinal() {   // essa função retorna o tempo final como string "mm:ss" (para salvar no banco)
+        return String(minutos).padStart(2, '0') + ":" + String(segundos).padStart(2, '0');
     }
 </script>
