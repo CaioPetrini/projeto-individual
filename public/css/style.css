@@ -228,17 +228,17 @@ button {
 
 .KPI img {
     width: 20%;
-    
 }
 
 .KPI div {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
 .KPI div p {
+    display: flex;
     font-size: 30px;
 }
 
@@ -246,6 +246,13 @@ button {
     display: flex;
     font-size: 40px;
     align-self: center;
+}
+
+.kpi3_texto {
+    display: flex;
+    font-size: 50px;
+    align-self: center;
+    margin-top: 20px;
 }
 
 

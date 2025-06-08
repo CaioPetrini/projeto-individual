@@ -1,22 +1,21 @@
 var database = require("../database/config")
 
-function listar() {
+function obterPontuacaoMedia(idUsuario) {
     var instrucao = `
-        SELECT * FROM carro;
+        SELECT nome, CONCAT(TRUNCATE(AVG(pontuacao), 0), '%') AS Média FROM usuario JOIN tentativa ON fkUsuarioTentativa = idUsuario WHERE idUsuario = ${idUsuario} GROUP BY idUsuario;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function temporizar(temporizador) {
-    var instrucao = `
-        INSERT INTO tentativa (nome) VALUES ('${temporizador}');
+function temporizar(idUsuario, pontuacao, duracao) {
+    const instrucao = `
+        INSERT INTO tentativa (fkUsuarioTentativa, pontuacao, duracao) VALUES (${idUsuario}, ${pontuacao}, '${duracao}');
     `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
 module.exports = {
     temporizar,
-    listar
+    obterPontuacaoMedia
 };

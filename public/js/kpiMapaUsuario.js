@@ -1,4 +1,3 @@
-
 var idUsuario = sessionStorage.ID_USUARIO;
 
 async function carregarKPI2() {

@@ -1,8 +1,8 @@
-var temporizadorModel = require("../models/tentativaModel");
+var tentativaModel = require("../models/tentativaModel");
 
-function listar(req, res) {
-    carroModel.listar().then(function(resultado){
-        // precisamos informar que o resultado voltará para o front-end como uma resposta em json
+function obterPontuacaoMedia(req, res) {
+    var idUsuario = req.params.idUsuario;
+    tentativaModel.obterPontuacaoMedia(idUsuario).then(function(resultado){
         res.status(200).json(resultado);
     }).catch(function(erro){
         res.status(500).json(erro.sqlMessage);
@@ -10,20 +10,24 @@ function listar(req, res) {
 }
 
 function temporizar(req, res) {
-    var temporizador = req.body.temporizador;
+    var idUsuario = req.body.idUsuario;
+    var pontuacao = req.body.pontuacao;
+    var duracao = req.body.duracao;
 
-    if (temporizador == undefined) {
-        res.status(400).send("Seu temporizador está undefined!");
+    if (!idUsuario || !pontuacao || !duracao) {
+        return res.status(400).send("Dados inválidos ou ausentes.");
     }
 
-    temporizadorModel.temporizar(temporizador).then(function(resposta){
-        res.status(200).send("Temporizador criado com sucesso");
-    }).catch(function(erro){
-        res.status(500).json(erro.sqlMessage);
-    })
+    tentativaModel.temporizar(idUsuario, pontuacao, duracao)
+        .then(function (resposta) {
+            res.status(200).send("Temporizador criado com sucesso");
+        })
+        .catch(function (erro) {
+            res.status(500).json(erro.sqlMessage || erro);
+        });
 }
 
 module.exports = {
-    listar,
+    obterPontuacaoMedia,
     temporizar
 }

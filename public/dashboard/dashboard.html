@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body onload="carregarKPI2()">
+<body onload="carregarKPI2(), carregarKPI3()">
     <div class="container_geral">
         <div>
             <div class="barra_lateral">
@@ -69,10 +69,7 @@
                                 </div>
                                 <div class="KPI">
                                     <p>Média de pontuação do usuário</p>
-                                    <div>
-                                        <img src="../images/fi-sr-feather.png" alt="">
-                                        <p>20%</p>
-                                    </div>
+                                    <div class="kpi3_texto" id="kpi3-container"></div>
 
                                 </div>
                             </div>
@@ -82,7 +79,7 @@
                         <div class="graficos">
                             <div class="grafico1">
                                 <div class="title_button">
-                                    <p>Histórico de tentativas</p>
+                                    <p>Pontuação por tentativa</p>
                                     <div class="umidade">Pontuação</div>
                                 </div>
                                 <!-- gráfico 01 -->
@@ -106,8 +103,8 @@
                         <div class="graficos">
                             <div class="grafico_final">
                                 <div class="title_button">
-                                    <p>Percentual de acertos por questão</p>
-                                    <div class="umidade">Percentual</div>
+                                    <p>Tempo por tentativa</p>
+                                    <div class="umidade">Tempo</div>
                                 </div>
                                 <!-- gráfico 03 -->
                                 <div class="graf03">
@@ -121,6 +118,7 @@
         </div>
     </div>
 
+    <script src="../js/kpiMediaPontuacao.js"></script>
     <script src="../js/kpiMapaUsuario.js"></script>
     <script src="../js/kpiMapa.js"></script>
     <script>carregarKPI();</script>

@@ -8,7 +8,6 @@ nome VARCHAR(45),
 contadorAcessos INT DEFAULT 0
 );
 
-
 CREATE TABLE usuario(
 	idUsuario INT PRIMARY KEY auto_increment,
     nome VARCHAR(45),
@@ -22,8 +21,16 @@ fkUsuarioMapa INT,
 	CONSTRAINT fkUsuarioMapa FOREIGN KEY (fkUsuarioMapa) REFERENCES usuario(idUsuario),
 fkMapa INT,
 	CONSTRAINT fkMapa FOREIGN KEY (fkMapa) REFERENCES mapa(idMapa),
-dataAcesso DATETIME,
+contadorAcessosUsuario INT DEFAULT 0,
 	CONSTRAINT pkComposta PRIMARY KEY (idArea, fkUsuarioMapa, fkMapa)
+);
+
+CREATE TABLE tentativa (
+idTentativa INT AUTO_INCREMENT,
+fkUsuarioTentativa INT,
+	CONSTRAINT pkComposta2 PRIMARY KEY (idTentativa, fkUsuarioTentativa),
+pontuacao INT,
+duracao TIME
 );
 
 -- Inserindo todas os mapas
@@ -44,32 +51,23 @@ INSERT INTO mapa (nome) VALUES
     ('A Colméia'),
     ('Bacia Antiga');
     
-SELECT * FROM mapa;
-SELECT * FROM usuario;
-SELECT * FROM area;
-
-INSERT INTO area (fkUsuarioMapa, fkMapa) VALUES
-	(1, 1),
-	(1, 1),
-	(1, 1),
-	(1, 1),
-	(1, 2),
-	(1, 2),
-	(1, 3),
-	(1, 4);
-
 -- KPI (Percentual do mapa mais acessado entre todos os usuários)
 SELECT nome, contadorAcessos,
 	TRUNCATE((contadorAcessos / (SELECT SUM(contadorAcessos) FROM mapa)) * 100, 0) AS percentual
 FROM mapa ORDER BY contadorAcessos DESC LIMIT 1;
 
 -- KPI (Percentual do mapa mais acessado de um usuário específico)
-SELECT u.nome, m.nome, m.contadorAcessos,
-	TRUNCATE((SELECT (COUNT(contadorAcessos)) * 100 / COUNT(contadorAcessos) FROM mapa WHERE idUsuario = 1), 0) AS percentual
-FROM mapa AS m
-	JOIN area AS a
-		ON a.fkMapa = m.idMapa
-	JOIN usuario AS u
-		ON fkUsuarioMapa = u.idUsuario
-        GROUP BY u.idUsuario, m.nome, m.contadorAcessos
-    ORDER BY m.contadorAcessos DESC LIMIT 1;
+SELECT u.nome AS Usuário,
+m.nome AS Mapa,
+	CONCAT(ROUND(a.contadorAcessosUsuario * 100 / (SELECT SUM(ae.contadorAcessosUsuario) FROM area ae
+	WHERE ae.fkUsuarioMapa = u.idUsuario), 0),'%') AS porcentagem
+FROM usuario u JOIN area a
+	ON u.idUsuario = a.fkUsuarioMapa JOIN mapa m
+    ON a.fkMapa = m.idMapa
+	WHERE u.idUsuario = 1
+	ORDER BY a.contadorAcessosUsuario DESC LIMIT 1;
+    
+-- KPI (Média de pontuação do usuário)
+SELECT nome, TRUNCATE(AVG(pontuacao), 0) FROM usuario JOIN tentativa
+	ON fkUsuarioTentativa = idUsuario
+	GROUP BY idUsuario, nome;

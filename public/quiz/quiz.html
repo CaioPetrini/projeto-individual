@@ -92,6 +92,8 @@
 
 </html>
 <script>
+    var idUsuario = sessionStorage.ID_USUARIO;
+
     let minutos = 0;
     let segundos = 0; // na aula do JP aprendemos que let não pode ser redeclarada no mesmo escopo, mas pode ser reatribuída
     let intervalo; // essa variável serve para guardar o relógio que roda a cada segundo
@@ -361,27 +363,29 @@
 
         textoParaMensagemFinal += "<br> A sua pontuação foi " + Math.round((porcentagemFinalDeAcertos) * 100) + "% de 100%. <br> Redirecionando você para a Dashboard em 10 segundos...";
 
-        
+
         document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
         document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal)
         document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
-        
+
         document.getElementById('jogo').classList.add("text-new-gray")
-        
+
         btnProx.disabled = true
         btnSubmeter.disabled = true
         // btnConcluir.disabled = true
         btnTentarNovamente.disabled = false
-        
+
         pararTemporizador(); // chamei a função pararTemporizador aqui para assim que o usuário finalizar, aparecer o temporizador parado, mostrando o tempo que ele demorou  
-        
+
+        temporizador();
+
         setTimeout(redirecionarParaDashboard, 10000);
     }
 
     function pararTemporizador() {
         clearInterval(intervalo); // trava o temporizador
     }
-    
+
     function redirecionarParaDashboard() {
         window.location.href = '../dashboard/dashboard.html'
     }
@@ -420,4 +424,22 @@
     function pegarTempoFinal() {   // essa função retorna o tempo final como string "mm:ss" (para salvar no banco)
         return String(minutos).padStart(2, '0') + ":" + String(segundos).padStart(2, '0');
     }
+
+    function temporizador() {
+        const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
+        const pontuacao = porcentagemFinalDeAcertos;
+        const tempoFinal = pegarTempoFinal();
+
+        fetch("/tentativa/criar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({idUsuario: idUsuario, pontuacao: porcentagemFinalDeAcertos * 100, duracao: tempoFinal})
+        })
+            .then(res => res.json())
+            .then(data => console.log("Resposta do backend:", data))
+            .catch(erro => console.error("Erro ao registrar acesso:", erro));
+    }
+
 </script>
