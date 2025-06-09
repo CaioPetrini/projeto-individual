@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 </head>
 
 <body onload="carregarKPI2(), carregarKPI3()">
@@ -43,7 +44,7 @@
                     <div class="zona_1">
                         <div class="temp">
                             <div class="container_img">
-                                <img id="umidade_alta" src="../assets/imgs/UmidadeAlta.png" alt="">
+                                <img id="umidade_alta" src="../assets/imgs/acima da media.png" alt="">
                                 <p>Acima da média</p>
                             </div>
                             <div class="container_img">
@@ -68,7 +69,7 @@
 
                                 </div>
                                 <div class="KPI">
-                                    <p>Média de pontuação do usuário</p>
+                                    <p>Sua média de pontuação</p>
                                     <div class="kpi3_texto" id="kpi3-container"></div>
 
                                 </div>
@@ -80,7 +81,6 @@
                             <div class="grafico1">
                                 <div class="title_button">
                                     <p>Pontuação por tentativa</p>
-                                    <div class="umidade">Pontuação</div>
                                 </div>
                                 <!-- gráfico 01 -->
                                 <div class="graf01">
@@ -89,7 +89,7 @@
                             </div>
                             <div class="grafico2">
                                 <div class="title_button">
-                                    <p>Percentual de usuários que tiveram a pontuação entre 60% e 100%</p>
+                                    <p>Tentativas que foram acima e abaixo da média</p>
 
                                 </div>
                                 <!-- gráfico 02 -->
@@ -103,8 +103,7 @@
                         <div class="graficos">
                             <div class="grafico_final">
                                 <div class="title_button">
-                                    <p>Tempo por tentativa</p>
-                                    <div class="umidade">Tempo</div>
+                                    <p>Histórico de tempo das últimas 10 tentativas</p>
                                 </div>
                                 <!-- gráfico 03 -->
                                 <div class="graf03">
@@ -118,6 +117,7 @@
         </div>
     </div>
 
+    <script src="../js/graficos.js"></script>
     <script src="../js/kpiMediaPontuacao.js"></script>
     <script src="../js/kpiMapaUsuario.js"></script>
     <script src="../js/kpiMapa.js"></script>

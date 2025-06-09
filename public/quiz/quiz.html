@@ -86,7 +86,7 @@
             <div class="email">E-mail: caio.asouza@sptech.school</div>
             <div class="telefone">Telefone: (11) 95302-7209</div>
         </div>
-        <div class="mensagem">Feito por aluno SPTech © 2025</div>
+        <div class="mensagem">Feito por Caio Petrini © 2025</div>
     </div>
 </body>
 
@@ -405,7 +405,7 @@
     // Inicia o cronômetro automaticamente
     function iniciarTemporizador() {
         intervalo = setInterval(() => { // arrowfunction para chamar uma função
-            segundos++;
+            segundos = segundos + 1;
             if (segundos === 60) {
                 segundos = 0;
                 minutos++;
@@ -421,8 +421,8 @@
         }, 1000);
     }
 
-    function pegarTempoFinal() {   // essa função retorna o tempo final como string "mm:ss" (para salvar no banco)
-        return String(minutos).padStart(2, '0') + ":" + String(segundos).padStart(2, '0');
+    function pegarTempoFinal() {   // essa função retorna o tempo final como string "mm:ss"
+        return "00:" + String(minutos).padStart(2, '0') + ":" + String(segundos).padStart(2, '0');
     }
 
     function temporizador() {

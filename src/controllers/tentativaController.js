@@ -15,7 +15,7 @@ function temporizar(req, res) {
     var duracao = req.body.duracao;
 
     if (!idUsuario || !pontuacao || !duracao) {
-        return res.status(400).send("Dados inválidos ou ausentes.");
+        return res.status(400).send("Dados inválidos ou undefined.");
     }
 
     tentativaModel.temporizar(idUsuario, pontuacao, duracao)
@@ -27,7 +27,37 @@ function temporizar(req, res) {
         });
 }
 
+function obterPontuacoes(req, res) {
+    var idUsuario = req.params.idUsuario;
+    tentativaModel.obterPontuacoes(idUsuario).then(function(resultado){
+        res.status(200).json(resultado);
+    }).catch(function(erro){
+        res.status(500).json(erro.sqlMessage);
+    })
+}
+
+function obterDuracoes(req, res) {
+    var idUsuario = req.params.idUsuario;
+    tentativaModel.obterDuracoes(idUsuario).then(function(resultado){
+        res.status(200).json(resultado);
+    }).catch(function(erro){
+        res.status(500).json(erro.sqlMessage);
+    })
+}
+
+function obterMedias(req, res) {
+    var idUsuario = req.params.idUsuario;
+    tentativaModel.obterMedias(idUsuario).then(function(resultado){
+        res.status(200).json(resultado);
+    }).catch(function(erro){
+        res.status(500).json(erro.sqlMessage);
+    })
+}
+
 module.exports = {
     obterPontuacaoMedia,
-    temporizar
+    temporizar,
+    obterPontuacoes,
+    obterDuracoes,
+    obterMedias
 }
